@@ -12,12 +12,12 @@ export const ExerciseSchema  = new mongoose.Schema({
 })
 
 export interface Iexercise extends mongoose.Document{
-    exercisenumber: string
+    exercisenumber: string;
     exercisetype: string;
     skill: string;
     level: string;
     sublevel: string;
     points: string;
-    instruction: string
+    instruction: string;
     rightanswer: string
 }

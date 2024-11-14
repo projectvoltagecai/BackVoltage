@@ -1,17 +1,17 @@
 import mongoose, { Document } from "mongoose";
 
 export const ProgressSchema = new mongoose.Schema({
-    progressid: { type: String, required: true },
-    sublevelid: { type: String, required: true },
-    exerciseid: { type: String, required: true, unique: true },
-    date: { type: String, required: true },
-    time: { type: String, required: true },
-    points: { type: Number, required: true },
-    skillid: { type: String, required: true }
+    userid: String,
+    sublevelid: String,
+    exerciseid: String,
+    date: String,
+    time: String,
+    points: Number,
+    skillid: String
 });
 
 export interface Iprogress extends Document {
-    progressid: string;
+    userid: string;
     sublevelid: string;
     exerciseid: string;
     date: string;
