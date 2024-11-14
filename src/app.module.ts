@@ -13,13 +13,15 @@ import { SublevelModule } from './sublevel/sublevel.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ProgressModule } from './progress/progress.module';
 import { GapModule } from './gap/gap.module';
+import { TagController } from './tag/tag.controller';
+import { TagModule } from './tag/tag.module';
 
 
 @Module({
   imports: [
     //MongooseModule.forRoot('mongodb+srv://Admin:semillero2024*@cluster0.fh05x.mongodb.net/Voltage_dev'),
     MongooseModule.forRoot('mongodb+srv://Admin:semillero2024*@cluster0.vhq3q.mongodb.net/Voltage_dev'),    
-    UserModule, GamificationModule, VocabularyModule, ChallengeModule, ExerciseModule, SkillsModule, ExamModule, LevelModule, SublevelModule, ProgressModule, GapModule],
+    UserModule, GamificationModule, VocabularyModule, ChallengeModule, ExerciseModule, SkillsModule, ExamModule, LevelModule, SublevelModule, ProgressModule, GapModule, TagModule],
   controllers: [AppController],
   providers: [AppService],
 })

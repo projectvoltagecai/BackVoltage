@@ -10,7 +10,7 @@ export class ChallengeService {
     constructor(@InjectModel('Challenge') private challengeModel: Model<Ichallenge>) {}
 
     saludo(): string {
-        return 'Hola! Esta es la Ruta de la API de Usuarios'
+        return 'Hola! Esta es la Ruta de la API de Challenges'
     }
     //CRUD Usuarios
     //Crear Usuario
