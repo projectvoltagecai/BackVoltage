@@ -15,7 +15,6 @@ import { ProgressModule } from './progress/progress.module';
 import { GapModule } from './gap/gap.module';
 import { TagModule } from './tag/tag.module';
 
-
 @Module({
   imports: [
     //MongooseModule.forRoot('mongodb+srv://Admin:semillero2024*@cluster0.fh05x.mongodb.net/Voltage_dev'),
