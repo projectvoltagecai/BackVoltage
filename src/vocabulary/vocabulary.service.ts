@@ -12,17 +12,17 @@ export class VocabularyService {
     saludo(): string {
         return 'Hola! Esta es la Ruta de la API de Vocabularios'
     }
-    //CRUD Usuarios
-    //Crear Usuario
+    //CRUD Vocabularies
+    //Crear Vocabulary
     async CreateVocabulary(vocabulary: VocabularyDto){
         const resultado = new this.vocabularyModel(vocabulary)
         return await resultado.save()
     }
-    //Encontrar Usuarios
+    //Encontrar Vocabularies
     async getAllVocabularys() : Promise <Ivocabulary[]>{
         return await this.vocabularyModel.find().exec()
     }
-    //Borrar Usuario
+    //Borrar Vocabulary
     async deleteVocabulary(id: string){
         const resultado = await this.vocabularyModel.findByIdAndDelete(id)
         if(resultado!=null){
@@ -30,7 +30,7 @@ export class VocabularyService {
         }
         return {ok: false, result: null}
     }
-    //Actualizar Usuario
+    //Actualizar Vocabulary
     async updateVocabulary(id: string, vocabulary: VocabularyDto){
         const resultado = await this.vocabularyModel.findByIdAndUpdate(id, vocabulary)
         if(resultado!=null){

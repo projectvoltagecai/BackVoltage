@@ -29,7 +29,7 @@ export class GapController {
         if(result.ok){
             return {ok: true, result: result.result}
         }
-        return {ok: false, mensaje: "El Usuario no existe"}
+        return {ok: false, mensaje: "El Gap no existe"}
     }
 
     @Patch('/:id')
@@ -38,6 +38,6 @@ export class GapController {
         if(result.ok){
             return {ok: true, result: result.result}
         }
-        return {ok: false, mensaje: "El Usuario no se pudo actualizar, no existe o no tiene permisos"}
+        return {ok: false, mensaje: "El Gap no se pudo actualizar, no existe o no tiene permisos"}
     }
 }

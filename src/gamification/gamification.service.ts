@@ -12,17 +12,17 @@ export class GamificationService {
     saludo(): string {
         return 'Hola! Esta es la Ruta de la API de Gamificaciones'
     }
-    //CRUD Usuarios
-    //Crear Usuario
+    //CRUD Gamifications
+    //Crear Gamification
     async CreateGamification(gamification: GamificationDto){
         const resultado = new this.gamificationModel(gamification)
         return await resultado.save()
     }
-    //Encontrar Usuarios
+    //Encontrar Gamifications
     async getAllGamifications() : Promise <Igamification[]>{
         return await this.gamificationModel.find().exec()
     }
-    //Borrar Usuario
+    //Borrar Gamification
     async deleteGamification(id: string){
         const resultado = await this.gamificationModel.findByIdAndDelete(id)
         if(resultado!=null){
@@ -30,7 +30,7 @@ export class GamificationService {
         }
         return {ok: false, result: null}
     }
-    //Actualizar Usuario
+    //Actualizar Gamification
     async updateGamification(id: string, gamification: GamificationDto){
         const resultado = await this.gamificationModel.findByIdAndUpdate(id, gamification)
         if(resultado!=null){

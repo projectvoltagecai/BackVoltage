@@ -12,17 +12,17 @@ export class ExamService {
     saludo(): string {
         return 'Hola! Esta es la Ruta de la API de Examenes'
     }
-    //CRUD Usuarios
-    //Crear Usuario
+    //CRUD Exams
+    //Crear Exam
     async CreateExam(exam: ExamDto){
         const resultado = new this.examModel(exam)
         return await resultado.save()
     }
-    //Encontrar Usuarios
+    //Encontrar Exams
     async getAllExams() : Promise <Iexam[]>{
         return await this.examModel.find().exec()
     }
-    //Borrar Usuario
+    //Borrar Exam
     async deleteExam(id: string){
         const resultado = await this.examModel.findByIdAndDelete(id)
         if(resultado!=null){
@@ -30,7 +30,7 @@ export class ExamService {
         }
         return {ok: false, result: null}
     }
-    //Actualizar Usuario
+    //Actualizar Exam
     async updateExam(id: string, exam: ExamDto){
         const resultado = await this.examModel.findByIdAndUpdate(id, exam)
         if(resultado!=null){

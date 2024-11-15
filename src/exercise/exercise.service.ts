@@ -12,17 +12,17 @@ export class ExerciseService {
     saludo(): string {
         return 'Hola! Esta es la Ruta de la API de Ejercicios'
     }
-    //CRUD Usuarios
-    //Crear Usuario
+    //CRUD Exercises
+    //Crear Exercise
     async CreateExercise(exercise: ExerciseDto){
         const resultado = new this.exerciseModel(exercise)
         return await resultado.save()
     }
-    //Encontrar Usuarios
+    //Encontrar Exercises
     async getAllExercises() : Promise <Iexercise[]>{
         return await this.exerciseModel.find().exec()
     }
-    //Borrar Usuario
+    //Borrar Exercise
     async deleteExercise(id: string){
         const resultado = await this.exerciseModel.findByIdAndDelete(id)
         if(resultado!=null){
@@ -30,7 +30,7 @@ export class ExerciseService {
         }
         return {ok: false, result: null}
     }
-    //Actualizar Usuario
+    //Actualizar Exercise
     async updateExercise(id: string, exercise: ExerciseDto){
         const resultado = await this.exerciseModel.findByIdAndUpdate(id, exercise)
         if(resultado!=null){

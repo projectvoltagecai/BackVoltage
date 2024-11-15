@@ -10,19 +10,19 @@ export class GapService {
     constructor(@InjectModel('Gap') private gapModel: Model<Igap>) {}
 
     saludo(): string {
-        return 'Hola! Esta es la Ruta de la API de Usuarios'
+        return 'Hola! Esta es la Ruta de la API de Gaps'
     }
-    //CRUD Usuarios
-    //Crear Usuario
+    //CRUD Gaps
+    //Crear Gap
     async CreateGap(gap: GapDto){
         const resultado = new this.gapModel(gap)
         return await resultado.save()
     }
-    //Encontrar Usuarios
+    //Encontrar Gaps
     async getAllGaps() : Promise <Igap[]>{
         return await this.gapModel.find().exec()
     }
-    //Borrar Usuario
+    //Borrar Gap
     async deleteGap(id: string){
         const resultado = await this.gapModel.findByIdAndDelete(id)
         if(resultado!=null){
@@ -30,7 +30,7 @@ export class GapService {
         }
         return {ok: false, result: null}
     }
-    //Actualizar Usuario
+    //Actualizar Gap
     async updateGap(id: string, gap: GapDto){
         const resultado = await this.gapModel.findByIdAndUpdate(id, gap)
         if(resultado!=null){

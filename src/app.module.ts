@@ -13,7 +13,6 @@ import { SublevelModule } from './sublevel/sublevel.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ProgressModule } from './progress/progress.module';
 import { GapModule } from './gap/gap.module';
-import { TagController } from './tag/tag.controller';
 import { TagModule } from './tag/tag.module';
 
 
@@ -26,5 +25,3 @@ import { TagModule } from './tag/tag.module';
   providers: [AppService],
 })
 export class AppModule {}
-
-

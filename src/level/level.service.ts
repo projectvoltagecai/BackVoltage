@@ -12,17 +12,17 @@ export class LevelService {
     saludo(): string {
         return 'Hola! Esta es la Ruta de la API de Niveles'
     }
-    //CRUD Usuarios
-    //Crear Usuario
+    //CRUD Levels
+    //Crear Level
     async CreateLevel(level: LevelDto){
         const resultado = new this.levelModel(level)
         return await resultado.save()
     }
-    //Encontrar Usuarios
+    //Encontrar Levels
     async getAllLevels() : Promise <Ilevel[]>{
         return await this.levelModel.find().exec()
     }
-    //Borrar Usuario
+    //Borrar Level
     async deleteLevel(id: string){
         const resultado = await this.levelModel.findByIdAndDelete(id)
         if(resultado!=null){
@@ -30,7 +30,7 @@ export class LevelService {
         }
         return {ok: false, result: null}
     }
-    //Actualizar Usuario
+    //Actualizar Level
     async updateLevel(id: string, level: LevelDto){
         const resultado = await this.levelModel.findByIdAndUpdate(id, level)
         if(resultado!=null){

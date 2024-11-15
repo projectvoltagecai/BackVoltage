@@ -12,17 +12,17 @@ export class SublevelService {
     saludo(): string {
         return 'Hola! Esta es la Ruta de la API de SubNiveles'
     }
-    //CRUD Usuarios
-    //Crear Usuario
+    //CRUD SubLevels
+    //Crear SubLevel
     async CreateSublevel(sublevel: SublevelDto){
         const resultado = new this.sublevelModel(sublevel)
         return await resultado.save()
     }
-    //Encontrar Usuarios
+    //Encontrar SubLevels
     async getAllSublevels() : Promise <Isublevel[]>{
         return await this.sublevelModel.find().exec()
     }
-    //Borrar Usuario
+    //Borrar SubLevel
     async deleteSublevel(id: string){
         const resultado = await this.sublevelModel.findByIdAndDelete(id)
         if(resultado!=null){
@@ -30,7 +30,7 @@ export class SublevelService {
         }
         return {ok: false, result: null}
     }
-    //Actualizar Usuario
+    //Actualizar SubLevel
     async updateSublevel(id: string, sublevel: SublevelDto){
         const resultado = await this.sublevelModel.findByIdAndUpdate(id, sublevel)
         if(resultado!=null){

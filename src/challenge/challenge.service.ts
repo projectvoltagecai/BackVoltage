@@ -12,17 +12,17 @@ export class ChallengeService {
     saludo(): string {
         return 'Hola! Esta es la Ruta de la API de Challenges'
     }
-    //CRUD Usuarios
-    //Crear Usuario
+    //CRUD Challenge
+    //Crear Challenge
     async CreateChallenge(challenge: ChallengeDto){
         const resultado = new this.challengeModel(challenge)
         return await resultado.save()
     }
-    //Encontrar Usuarios
+    //Encontrar Challenge
     async getAllChallenges() : Promise <Ichallenge[]>{
         return await this.challengeModel.find().exec()
     }
-    //Borrar Usuario
+    //Borrar Challenge
     async deleteChallenge(id: string){
         const resultado = await this.challengeModel.findByIdAndDelete(id)
         if(resultado!=null){
@@ -30,7 +30,7 @@ export class ChallengeService {
         }
         return {ok: false, result: null}
     }
-    //Actualizar Usuario
+    //Actualizar Challenge
     async updateChallenge(id: string, challenge: ChallengeDto){
         const resultado = await this.challengeModel.findByIdAndUpdate(id, challenge)
         if(resultado!=null){

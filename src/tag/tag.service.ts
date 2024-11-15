@@ -12,17 +12,17 @@ export class TagService {
     saludo(): string {
         return 'Hola! Esta es la Ruta de la API de Tags'
     }
-    //CRUD Usuarios
-    //Crear Usuario
+    //CRUD Tags
+    //Crear Tag
     async CreateTag(tag: TagDto){
         const resultado = new this.tagModel(tag)
         return await resultado.save()
     }
-    //Encontrar Usuarios
+    //Encontrar Tags
     async getAllTags() : Promise <Itag[]>{
         return await this.tagModel.find().exec()
     }
-    //Borrar Usuario
+    //Borrar Tag
     async deleteTag(id: string){
         const resultado = await this.tagModel.findByIdAndDelete(id)
         if(resultado!=null){
@@ -30,7 +30,7 @@ export class TagService {
         }
         return {ok: false, result: null}
     }
-    //Actualizar Usuario
+    //Actualizar Tag
     async updateTag(id: string, tag: TagDto){
         const resultado = await this.tagModel.findByIdAndUpdate(id, tag)
         if(resultado!=null){

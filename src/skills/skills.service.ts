@@ -12,17 +12,17 @@ export class SkillsService {
     saludo(): string {
         return 'Hola! Esta es la Ruta de la API de las habilidades'
     }
-    //CRUD Usuarios
-    //Crear Usuario
+    //CRUD Skills
+    //Crear Skill
     async CreateSkills(skills: SkillsDto){
         const resultado = new this.skillsModel(skills)
         return await resultado.save()
     }
-    //Encontrar Usuarios
+    //Encontrar Skills
     async getAllSkillss() : Promise <Iskills[]>{
         return await this.skillsModel.find().exec()
     }
-    //Borrar Usuario
+    //Borrar Skill
     async deleteSkills(id: string){
         const resultado = await this.skillsModel.findByIdAndDelete(id)
         if(resultado!=null){
@@ -30,7 +30,7 @@ export class SkillsService {
         }
         return {ok: false, result: null}
     }
-    //Actualizar Usuario
+    //Actualizar Skill
     async updateSkills(id: string, skills: SkillsDto){
         const resultado = await this.skillsModel.findByIdAndUpdate(id, skills)
         if(resultado!=null){

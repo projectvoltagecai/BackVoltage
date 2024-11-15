@@ -12,17 +12,17 @@ export class ProgressService {
     saludo(): string {
         return 'Hola! Esta es la Ruta de la API de Progresos'
     }
-    //CRUD Usuarios
-    //Crear Usuario
+    //CRUD Progress
+    //Crear Progress
     async CreateProgress(progress: ProgressDto){
         const resultado = new this.progressModel(progress)
         return await resultado.save()
     }
-    //Encontrar Usuarios
+    //Encontrar Progress
     async getAllProgresss() : Promise <Iprogress[]>{
         return await this.progressModel.find().exec()
     }
-    //Borrar Usuario
+    //Borrar Progress
     async deleteProgress(id: string){
         const resultado = await this.progressModel.findByIdAndDelete(id)
         if(resultado!=null){
@@ -30,7 +30,7 @@ export class ProgressService {
         }
         return {ok: false, result: null}
     }
-    //Actualizar Usuario
+    //Actualizar Progress
     async updateProgress(id: string, progress: ProgressDto){
         const resultado = await this.progressModel.findByIdAndUpdate(id, progress)
         if(resultado!=null){
